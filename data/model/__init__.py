@@ -1,5 +1,5 @@
-from voxel_model import VoxelModel
+from .voxel_model import VoxelModel
 
 __all__ = [
-    'voxel_model'
+    'VoxelModel'
 ]
