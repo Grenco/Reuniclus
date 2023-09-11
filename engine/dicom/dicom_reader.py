@@ -1,7 +1,7 @@
-
-from pathlib import Path
 import pydicom as dicom
+
 import numpy as np
+from pathlib import Path
 
 
 class DicomReader:
@@ -12,7 +12,8 @@ class DicomReader:
     def get_image(self, path: Path) -> np.ndarray:
         """Extracts the image from the given file path"""
         dicom_file = self.__read(path)
-        return dicom_file.pixel_array
+        img = dicom_file.pixel_array
+        return img
 
     def __read(self, path: Path) -> dicom.FileDataset:
         """Read a dicom file at a given path"""
