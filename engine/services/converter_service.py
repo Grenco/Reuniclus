@@ -6,7 +6,7 @@ from engine.image import CTImageProcessor
 from engine.model import VoxelModelBuilder, VoxelProcessor, VoxelRendererABC
 
 
-class ConverterService:
+class ConverterService:     # TODO: Rename to make more clear
     """Converts dicom files into a mesh"""
     def __init__(self,
                  reader: DicomReader,
@@ -20,7 +20,7 @@ class ConverterService:
         self._renderer = renderer
         self._model_builder = model_builder
 
-    def convert(self, path: Path):
+    def convert(self, path: Path):  # TODO: Rename to make more clear
 
         self._model_builder.clear()
         for dicom in path.iterdir():
@@ -31,4 +31,4 @@ class ConverterService:
         model = self._model_builder.build()
         model = self._voxel_processor.resize(model, 0.1)
 
-        self._renderer.render(model)
+        self._renderer.render(model)    # TODO: This should convert, not render

@@ -9,7 +9,6 @@ class Container(containers.DeclarativeContainer):
     """Dependency container for implementing DI"""
 
     # Services
-
     dicom_reader = providers.Singleton(dicom.DicomReader)
 
     image_processor = providers.Singleton(image.CTImageProcessor)
