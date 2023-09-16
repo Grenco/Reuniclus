@@ -7,7 +7,7 @@ from container import Container
 
 
 @inject
-def main(converter_service: ConverterService = Provide[Container.converter_service]) -> None:
+def main(converter_service: ConverterService = Provide[Container.converter_service]):
     path = Path(r"./local_resources/dicom_example/")
     converter_service.convert(path)
 
