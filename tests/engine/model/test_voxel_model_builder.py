@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from engine.model.voxel_model_builder import VoxelModelBuilder
+from engine.model import VoxelModelBuilder
 from data.model import VoxelModel
 
 
