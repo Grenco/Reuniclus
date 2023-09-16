@@ -228,6 +228,9 @@ atlassian-ide-plugin.xml
 # SonarLint plugin
 .idea/sonarlint/
 
+# Ruff plugin
+.idea/ruff.xml
+
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
