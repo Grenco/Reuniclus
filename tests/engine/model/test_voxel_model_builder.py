@@ -1,13 +1,15 @@
+import unittest
+
 import numpy as np
 
-from engine.model.voxel_model_builder import VoxelModelBuilder
-import unittest
+from engine.model import VoxelModelBuilder
+from data.model import VoxelModel
 
 
 class TestVoxelModelBuilder(unittest.TestCase):
 
     def setUp(self):
-        self.sut = VoxelModelBuilder(5)
+        self.sut = VoxelModelBuilder()
 
     def test_add_layer(self):
         # Act
@@ -19,9 +21,9 @@ class TestVoxelModelBuilder(unittest.TestCase):
         # Arrange
         self.__build_test_model()
         # Act
-        result: np.ndarray = self.sut.build()
+        result: VoxelModel = self.sut.build()
         # Assert
-        self.assertEqual((2, 2, 5), result.shape)
+        self.assertEqual((2, 2, 5), result.voxels.shape)
 
     def __build_test_model(self):
         self.sut.add_layer(np.array([[1, 0], [0, 1]]))

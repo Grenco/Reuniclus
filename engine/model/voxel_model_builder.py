@@ -14,7 +14,11 @@ class VoxelModelBuilder:
         self.__layers: list[np.ndarray[int]] = []
         self.__layer: int = 0
 
-    def add_layer(self, layer: np.ndarray[int]):
+    def clear(self) -> None:
+        self.__layers = []
+        self.__layer = 0
+
+    def add_layer(self, layer: np.ndarray[int]) -> None:
         self.__layers.append(layer)
         self.__layer += 1
 
